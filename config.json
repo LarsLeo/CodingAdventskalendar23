@@ -1,0 +1,5 @@
+{
+  "base_url": "https://codingchallenge.azurewebsites.net/",
+  "get_riddle_path": "api/riddle/",
+  "post_solution_path" : "api/solution/"
+}
