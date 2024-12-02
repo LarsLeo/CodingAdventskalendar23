@@ -3,7 +3,7 @@ package org.example.solution
 import org.example.riddle.Riddle01
 import org.example.riddle.Riddle01Data
 
-class Solver01(private val riddle: Riddle01) : Solver(riddle) {
+class Solver01(private val riddle: Riddle01) : Solver() {
   override fun getDay(): String = "01"
 
   /**
@@ -14,10 +14,7 @@ class Solver01(private val riddle: Riddle01) : Solver(riddle) {
    */
   override suspend fun solve(): String {
     val solution =
-      riddle
-        .getRiddleData()
-        .map(::convertRiddleData)
-        .joinToString(separator = ", ", prefix = "[", postfix = "]")
+      riddle.getRiddleData().map(::convertRiddleData).map { gson.toJson(it) }.toString()
 
     // Uncomment to post the solution to the API ;)
     //  return postSolution(solution)

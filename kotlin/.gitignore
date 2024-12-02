@@ -6,3 +6,6 @@ build
 
 # Ignore Application Config with Secrets
 **/ApplicationConfig.kt
+
+# Kotlin
+kotlin-compiler*

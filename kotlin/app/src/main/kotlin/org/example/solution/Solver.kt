@@ -1,9 +1,9 @@
 package org.example.solution
 
-import org.example.riddle.Riddle
+import com.google.gson.Gson
 import org.example.web.RiddleService
 
-abstract class Solver(riddle: Riddle) {
+abstract class Solver(val gson: Gson = Gson()) {
   public abstract suspend fun solve(): String
 
   protected abstract fun getDay(): String

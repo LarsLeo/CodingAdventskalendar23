@@ -19,8 +19,7 @@ object RiddleService {
     }
 
   suspend fun getRiddle(day: String): String {
-    val response: HttpResponse =
-      client.get("${ApplicationConfig.BASE_URI}/riddle/$day") { headers { defaultHeaders } }
+    val response: HttpResponse = client.get("${ApplicationConfig.BASE_URI}/riddle/$day")
 
     return handleResponse(response)
   }

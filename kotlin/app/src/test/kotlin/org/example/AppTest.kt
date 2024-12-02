@@ -3,16 +3,14 @@
  */
 package org.example
 
-import org.example.riddle.Riddle01
-import org.example.solution.Solver
-import org.example.solution.Solver01
 import kotlin.test.Test
-import kotlin.test.assertNotNull
+import org.example.riddle.Riddle01
+import org.example.solution.Solver01
 
 class AppTest {
   @Test
   fun appHasAGreeting() {
     val classUnderTest = Solver01(Riddle01())
-//    assertNotNull(classUnderTest.greeting, "app should have a greeting")
+    //    assertNotNull(classUnderTest.greeting, "app should have a greeting")
   }
 }
