@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+# Ignore Application Config with Secrets
+**/ApplicationConfig.kt
