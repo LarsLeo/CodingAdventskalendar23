@@ -1,14 +1,17 @@
-# Golang project for solving the EGS coding Adventskalendar
+# Kotlin project for solving the EGS coding Adventskalendar
 The calendar can be found under: https://codingchallenge.azurewebsites.net/ <br>
 
 ## Setup
-There is no setup needed ;)
+Add a class called `ApplicationConfig.kt` in the path `kotlin/org/example/config/ApplicationConfig.kt` with the content: <br>
+
+```package org.example.config
+
+object ApplicationConfig {
+  const val BASE_URI: String = "https://codingchallenge.azurewebsites.net/api"
+  const val USER_TOKEN: String = // your token string here
+}
+```
 
 ## Structure
-The `config.json` contains the application config for the project. <br>
-The `main.go` file is the entry point of the application. <br>
-
-## Running a riddle solver
-The solvers for the individual riddles are located under the `solvers` package. <br>
-Run `main.go solve --api_key "<your_api_key>" --door "<door_number>"` to solve the riddle for the specific door. <br>
-The file `api_key.txt` is ignored by git, you can store your key there if you are lazy :) <br>
+There are `Riddle` classes, that automatically get the new riddle from the API and need to transfer the json into a kotlin data class. <br>
+`Solver` classes use these data classes returned from the riddle classes and implement code to solve the problem and return the solution as json again. <br>
